@@ -16,13 +16,11 @@ import java.security.MessageDigest;
 
 public class SHA1 {
 
-	public static void main(String[] argv){
+	public byte[] getSHA1(String value){
 
-		String value = "hola kevin";
+		//String value = "hola kevin";
                 byte [] sha1out;
 		String sha1 = "";
-		
-		// With the java libraries
 		try {
 			MessageDigest digest = MessageDigest.getInstance("SHA-1");
 	        digest.reset();
@@ -31,9 +29,8 @@ public class SHA1 {
 		} catch (Exception e){
 			e.printStackTrace();
 		}
+                System.out.println(sha1);
                 sha1out = sha1.getBytes();
-		System.out.println( "The sha1 of \""+ value + "\" is:");
-		System.out.println( sha1 );
-		System.out.println();
+                return sha1out;
         }
 }

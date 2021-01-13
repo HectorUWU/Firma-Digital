@@ -90,7 +90,7 @@ public class RSA implements Serializable{
         return bufferPlano2;
     }
     
-    public void decifrarLLavePublica(byte[] cipherText,PublicKey clavePublica){
+    public byte[] decifrarLLavePublica(byte[] cipherText,PublicKey clavePublica){
         byte[] bufferPlano2 = null;
         try {
             Cipher cifrador = Cipher.getInstance("RSA", "BC");
@@ -107,5 +107,6 @@ public class RSA implements Serializable{
         } catch (NoSuchAlgorithmException | NoSuchProviderException | NoSuchPaddingException ex) {
             Logger.getLogger(RSA.class.getName()).log(Level.SEVERE, null, ex);
         }
+        return bufferPlano2;
     }
 }
